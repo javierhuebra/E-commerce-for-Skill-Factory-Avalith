@@ -1,5 +1,12 @@
-
 import './App.css';
+
+/* IMPORTO DEPENDENCIAS DE BOOTSTRAP */
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+
+import Header from './Components/Header/Header';
+import Main from './Components/Main/Main';
+
 
 function App() {
   /* const c = console.log.bind(document);
@@ -7,7 +14,8 @@ function App() {
   
   return (
     <div className="App">
-      Esta empezando el ecomerce!
+      <Header/>
+      <Main/>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.subbar-container{
+    height: 30px;
+    background-color: #1F3B00;
+    border-top: 1px solid rgba(172, 255, 47, 0.596);
+    display: flex;
+    justify-content: space-between;
+    
+}
+.adress{
+    color: rgba(172, 255, 47, 0.788);
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin: 0%;
+}
+
+.adress span{
+    margin-left: 10px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.pico{
+    margin-right: 10px;
+}
