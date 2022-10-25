@@ -1,0 +1,28 @@
+.list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 5px 0;
+    background-color: #ffffff;
+    
+}
+.li-item{
+    color: rgb(53, 53, 53);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+
+}
+.li-icon{
+    padding-left: 30px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-right: 5px;
+}
+.home{
+    background-color: rgba(128, 255, 0, 0.288);
+    color: green;
+}

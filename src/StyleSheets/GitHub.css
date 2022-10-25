@@ -1,0 +1,41 @@
+.card-github-container{
+    height: 150px;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-git{
+    height: 80%;
+    width: 90%;
+    
+    border-radius: 16px;
+    background: rgb(209,251,63);
+background: radial-gradient(circle, rgba(209,251,63,1) 0%, rgba(0,117,13,1) 100%);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.card-git p{
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: rgb(0, 48, 8);
+}
+
+.icon-git{
+    font-size: 60px;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.26));
+    color: rgb(0, 48, 8);
+}
+
+.colorcin{
+    color: rgb(0, 48, 8);
+    margin: 0;
+}

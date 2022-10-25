@@ -1,4 +1,6 @@
 import Carrousel from "./Carrousel";
+import GitHub from "./GitHub";
+
 import SubBar from "./SubBar";
 
 const Main = () =>{
@@ -6,6 +8,7 @@ const Main = () =>{
         <div>
             <SubBar/>
             <Carrousel/>
+            <GitHub/>
         </div>
     )
 }
