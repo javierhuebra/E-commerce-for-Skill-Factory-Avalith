@@ -12,6 +12,7 @@ import Main from './Components/Main/Main';
 
 
 
+
 function App() {
 
   return (
@@ -19,8 +20,11 @@ function App() {
     <div className="App">
       <MenuProvider>
         <ConfigProvider>
+
           <Header />
+
           <Main />
+          
         </ConfigProvider>
       </MenuProvider>
     </div>

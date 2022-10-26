@@ -9,6 +9,6 @@ body{
 
 .App{
   width: 100vw;
-  height: 100vh;
-  background-color: #78E000;
+  min-height: 100vh;
+  background-color: #ffffff;
 }

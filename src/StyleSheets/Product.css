@@ -1,0 +1,28 @@
+.img-product{
+    
+    height: 180px;
+}
+
+.product-container{
+    
+    
+    
+    margin: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.cont-price-btn{
+    display: flex;
+}
+
+.btn-add{
+    width: 70px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+}
