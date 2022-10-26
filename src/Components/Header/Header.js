@@ -7,6 +7,9 @@ import Menu from "./Menu";
 
 //IMPORTO EL CONTEXTO
 import { useMenuContext, useMenuToggleContext } from "../context/MenuProvider";
+import { useConfigContext, useConfigToggleContext } from "../context/ConfigProvider";
+
+import Config from './Config';
 
 
 const Header = () => {
@@ -14,9 +17,15 @@ const Header = () => {
     const stateMenu = useMenuContext();
     const toggleMenu = useMenuToggleContext();
 
+    const stateConfig = useConfigContext();
+    const toggleConfig = useConfigToggleContext();
+
+    
+    console.log(stateMenu)
+
     return (
         <div>
-            <div className='header-container'>
+            <div className='header-container' >
                 <img className='logo-img' src={hojita} />
                 <div className='input-container'>
                     <img className='lupita' src={lupita} />
@@ -25,10 +34,12 @@ const Header = () => {
                         type='text'
                         placeholder="I'm looking for..." />
                 </div>
-                <p className='menu-logo' onClick={toggleMenu}><AiOutlineMenu /></p>
-                <p className='options-logo'><BsGear /></p>
+                <p className='menu-logo' onClick={toggleMenu}><AiOutlineMenu/></p>
+                <p className='options-logo' onClick={toggleConfig} ><BsGear /></p>
             </div>
             {stateMenu && <Menu/>}
+            
+            {stateConfig && <Config/>}
         </div>
         )
 }

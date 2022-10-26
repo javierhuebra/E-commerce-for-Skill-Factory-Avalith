@@ -8,7 +8,7 @@ export const useMenuContext = () => React.useContext(menuContext);
 export const useMenuToggleContext = () => React.useContext(menuToggleContext);
 
 export const MenuProvider = ({ children }) => {
-    const [menu, setMenu] = useState(null);
+    const [menu, setMenu] = useState(false);
 
     const toggleMenu = () => setMenu(!menu) ;
 

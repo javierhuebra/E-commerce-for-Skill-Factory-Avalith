@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { MenuProvider } from './Components/context/MenuProvider';
+import { ConfigProvider } from './Components/context/ConfigProvider';
 
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
@@ -14,15 +15,16 @@ import Main from './Components/Main/Main';
 function App() {
 
   return (
-    
-      <div className="App">
-        <MenuProvider>
+
+    <div className="App">
+      <MenuProvider>
+        <ConfigProvider>
           <Header />
-        </MenuProvider>
-        
-        <Main />
-      </div>
-    
+          <Main />
+        </ConfigProvider>
+      </MenuProvider>
+    </div>
+
   );
 }
 
