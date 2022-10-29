@@ -15,4 +15,5 @@ const Product = ({ image, title, price }) => {
     )
 }
 
+
 export default Product;
