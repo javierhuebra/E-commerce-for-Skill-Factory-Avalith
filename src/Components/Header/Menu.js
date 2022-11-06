@@ -12,6 +12,7 @@ const Menu = () =>{
                 <li className="li-item"><span className="li-icon"><CiGift/></span>Ofertas</li>
                 <li className="li-item"><span className="li-icon"><CiLocationOn/></span>Green Points</li>
                 <Link to='/carrito'><li className="li-item"><span className="li-icon"><CiLocationOn/></span>Carrito</li></Link>
+                <Link to='/add-product'><li className="li-item"><span className="li-icon"><CiLocationOn/></span>Agregar Producto</li></Link>
             </ul>
         </div>
     )

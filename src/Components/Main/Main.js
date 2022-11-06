@@ -5,6 +5,7 @@ import SubBar from "./SubBar";
 import { Routes, Route } from 'react-router-dom';
 import ProductList from "./ProductList";
 import Carrito from "./Carrito";
+import AddProduct from "./AddProduct";
 
 const Main = () => {
     return (
@@ -18,6 +19,7 @@ const Main = () => {
                 </div>}/>
                 <Route path="/products" element={<ProductList/>}/>
                 <Route path="/carrito" element={<Carrito/>}/>
+                <Route path="/add-product" element={<AddProduct/>}/>
                 <Route path="*" element={<h2>FORBIDEN 404</h2>}/>
             </Routes>
         </div>

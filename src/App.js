@@ -1,7 +1,6 @@
 
 import './App.css';
-/* IMPORTO DEPENDENCIAS DE BOOTSTRAP */
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import { MenuProvider } from './Components/context/MenuProvider';
 import { ConfigProvider } from './Components/context/ConfigProvider';
