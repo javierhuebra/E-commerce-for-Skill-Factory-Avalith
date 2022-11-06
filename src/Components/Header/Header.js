@@ -10,6 +10,7 @@ import { useMenuContext, useMenuToggleContext } from "../context/MenuProvider";
 import { useConfigContext, useConfigToggleContext } from "../context/ConfigProvider";
 
 import Config from './Config';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -26,7 +27,7 @@ const Header = () => {
     return (
         <div>
             <div className='header-container' >
-                <img className='logo-img' src={hojita} />
+                <Link to='/'><img className='logo-img' src={hojita} /></Link>
                 <div className='input-container'>
                     <img className='lupita' src={lupita} />
                     <input
