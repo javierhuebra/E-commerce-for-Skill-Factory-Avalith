@@ -1,27 +1,39 @@
 import { useState, useEffect } from "react";
 
 import { db } from '../../Firebase/firebase';
-import {collection, getDocs, getDoc, deleteDoc} from 'firebase/firestore'
-const Carrito = () =>{
-    const [products, setProducts] = useState([]);
-    /* console.log(db, "db"); */
-    
-    //llamamos a la colección de productos pasando como parametro la referencia
-    //a la base de datos y la colecci{on que queremos recuperar
+import {collection, getDocs, getDoc, deleteDoc, doc} from 'firebase/firestore'
 
-    const carritoCollection = collection(db, "products");
+
+const Carrito = () =>{
+    const [carrito, setCarrito] = useState([]);
+    
+    const carritoCollection = collection(db, "carrito");
     console.log(carritoCollection, "carrito");
 
     const getCarrito = async () => {
         const dataCarrito = await getDocs(carritoCollection);
-        console.log(dataCarrito);
+        /* console.log(dataCarrito);
+        console.log(dataCarrito.docs) */
+        setCarrito(
+            dataCarrito.docs.map((doc) =>({...doc.data(), id_db: doc.id}))
+        );
     }
+
+    console.log("carrito", carrito);
+    
     useEffect(()=>{
         getCarrito();
     },[])
+
     return(
         <div>
-            carrito de compras
+            {
+                carrito.map((idEnDb)=>{
+                    return(
+                        <p key={idEnDb.id_from_api}>{idEnDb.id_from_api}</p>
+                    )
+                })
+            }
         </div>
     )
 }

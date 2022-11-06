@@ -10,8 +10,6 @@ import { fetchProducts } from "../../features/products/productSlice";
 
 import Product from "./Product";
 
-
-
 const ProductList = () =>{
     const product = useSelector((state) => state.product)
     const dispatch = useDispatch();
