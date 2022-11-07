@@ -3,7 +3,7 @@ HACER PETICIONES INNECESARIAS, EL METODO NO SE SI ES EL CORRECTO PERO EN LA PROM
 ES UN POCO CONFUSO PERO ESPERO ENTENDERLO BIEN EN ALGUN MOMENTO YA QUE ES GENIAL, SUPER EFICIENTE PARECE */
 
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/products/productSlice";
@@ -36,17 +36,32 @@ const ProductList = () => {
         );
     }
 
+    const confirmDeleteProduct = (id) =>{
+        MySwal.fire({
+            title: 'Are you sure to delete this product?',
+            text: "This action don't be revert!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              deleteProduct(id);
+              MySwal.fire({
+                title: "Deleted!",
+                text: "Your Firebase Product has been deleted",
+                icon: "success",
+                confirmButtonText: "Ok",
+             })
+            }
+          })
+    }
 
     const deleteProduct = async (id) =>{
         const productToDelete = doc(db, "products", id);
         try{
             await deleteDoc(productToDelete);
-            MySwal.fire({
-               title: "Deleted!",
-               text: "Your Firebase Product has been deleted",
-               icon: "success",
-               confirmButtonText: "Ok",
-            })
         }catch(error){
             MySwal.fire({
                title:"Error!",
@@ -57,6 +72,8 @@ const ProductList = () => {
         }
         getProducts();
     }
+
+    
 
 
     useEffect(() => {
@@ -71,7 +88,7 @@ const ProductList = () => {
             {product.loading && <div>Loading...</div>}
             {!product.loading && product.error ? <div>Error: {product.error}</div> : null}
             {!product.loading && product.products.length ?
-                product.products.map((product) => {
+                product.products?.map((product) => {
                     return (
                         <Product
                             key={product.id}
@@ -94,8 +111,8 @@ const ProductList = () => {
                                 title={productDb.title}
                                 price={productDb.price}
                             />
-                            <Button>Update</Button>
-                            <Button onClick={()=>deleteProduct(productDb.id_db)}>Delete</Button>
+                            <Link to='/add-product'><Button>Update Product</Button></Link>
+                            <Button onClick={()=>confirmDeleteProduct(productDb.id_db)} variant="danger">Delete Product</Button>
                         </div>
                     )
                 })
